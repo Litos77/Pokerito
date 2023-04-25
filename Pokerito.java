@@ -34,33 +34,30 @@ public class Pokerito {
             String draw = randomCard();
             System.out.println("Card " + i);
             System.out.println(draw);
+
+            if (yourCard.equals(draw)) {
+                yourMatches++;
+            }
+
+            if (computerCard.equals(draw)) {
+                computerMatches++;
+            }
         }
 
+        System.out.println("Your number of matches: " + yourMatches);
+        System.out.println("Computer number of matches: " + computerMatches);
 
-        /** Task 5 - Get the winner
-         * 
-         * • Count your number of matches.
-         * • Count the computer's number of matches.
-         * • print: Your number of matches: <yourMatches>
-         * • print: Computer number of matches:  <computerMatches>
-         * 
-         * • If you have more matches, print: You win!. 
-         * • If the computer has more matches, print: The computer wins! 
-         * • If the matches are equal, print: everyone wins!.
-         */
+        if (yourMatches > computerMatches) {
+            System.out.println("You win!");
+        } else if (computerMatches > yourMatches) {
+            System.out.println("The computer wins!");
+        } else {
+            System.out.println("everyone wins!");
+        }
 
          scan.close();
     }
 
-    /** Task 
-     * 
-     * Function name – randomCard
-     * @return (String)
-     * 
-     * Inside the function:
-     *   1. Gets a random number between 1 and 13.
-     *   2. Returns a card that matches the random number (get the String values from cards.text).   
-     */
 
     public static String randomCard() {
         double randomNumber = Math.random() * 13; // 0 -12.99999
