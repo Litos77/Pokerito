@@ -4,32 +4,26 @@ public class Pokerito {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println(randomCard()); 
-
-        /*Task 2: Explain the rules
-
-        >>Let's play Pokerito. Type anything when you're ready.
-        |
-        >>It's like Poker, but a lot simpler.
-        >> (new line)
-        >> • There are two players, you and the computer.
-        >> • The dealer will give each player one card.
-        >> • Then, the dealer will draw five cards (the river)
-        >> • The player with the most river matches wins!
-        >> • If the matches are equal, everyone's a winner!
-        >> (new line)
-        >> • Ready? Type anything if you are.
-        |
-        */
+        System.out.println("Let's play Pokerito. Type anything when you're ready.");
+        scan.nextLine();
+        System.out.println("It's like Poker, but a lot simpler.\n");
+        System.out.println(" • There are two players, you and the computer.");
+        System.out.println(" • The dealer will give each player one card.");
+        System.out.println(" • Then, the dealer will draw five cards (the river)");
+        System.out.println(" • The player with the most river matches wins!\n");
+        System.out.println(" • If the matches are equal, everyone's a winner!\n");
+        System.out.println(" • Ready? Type anything if you are.");
+        scan.nextLine();
         
+        String yourCard = randomCard();
+        String computerCard = randomCard();
 
-        /*Task 3: Present the user with a card
-         println 'Here's your card:'
-         <show card>
-         <new line>
-         println 'Here's the computer's card:'
-         <show computer's card>
-        */
+        System.out.println("Here's your card: ");
+        System.out.println(yourCard);
+        System.out.println("\nHere's the computer's card: ");
+        System.out.println(computerCard);
+
+       
 
         int yourMatches = 0;
         int computerMatches =0;
@@ -62,6 +56,16 @@ public class Pokerito {
 
          scan.close();
     }
+
+    /** Task 
+     * 
+     * Function name – randomCard
+     * @return (String)
+     * 
+     * Inside the function:
+     *   1. Gets a random number between 1 and 13.
+     *   2. Returns a card that matches the random number (get the String values from cards.text).   
+     */
 
     public static String randomCard() {
         double randomNumber = Math.random() * 13; // 0 -12.99999
@@ -153,15 +157,4 @@ public class Pokerito {
             default: return "This should never get called";
         }
     }
-
-    /** Task 1
-     * 
-     * Function name – randomCard
-     * @return (String)
-     * 
-     * Inside the function:
-     *   1. Gets a random number between 1 and 13.
-     *   2. Returns a card that matches the random number (get the String values from cards.text).   
-     */
-
 }
